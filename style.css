@@ -1,0 +1,209 @@
+:root {
+    --blue:rgb(29,161,242);
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    max-width:100%;
+}
+
+button {
+    background:none;
+    border:none;
+    display:block;
+    color:inherit;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    line-height:1.25;
+
+    overflow:hidden;
+}
+
+/*
+traversing the dom
+-----
+.parentElement
+.children
+.firstElementChild
+.previousElementSibling
+.nextElementSibling
+*/
+
+
+/*JAVASCRIPT events
+
+- can do inline
+<button class="my-btn" onClick="console.log('you clicked the btn')">my button</button>
+
+
+- add  event in js
+input.addEventListener("focus", inputFunctionFocus)
+
+- remove event in js
+input.removeEventListener("focus", inputFunctionFocus)
+*/
+
+
+
+
+
+.send-msg-btn {
+    position: absolute;
+    background-color:var(--blue);
+    padding:1rem 2rem;
+    color:#fff;
+    border-radius: 50px;
+    font-size:1rem;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.send-msg-btn:hover {
+    cursor: pointer;
+    opacity:0.8;
+}
+
+
+
+.modal-container {
+    position: absolute;
+    background:rgba(0, 0, 0, 0.452);
+    width:100vw;
+    height:100vh;
+    transition: all ease 0.3s;
+
+    opacity:0;
+    z-index:-10;
+}
+
+.modal-container-shown {
+    opacity:1;
+    z-index:10;
+
+
+}
+
+.modal {
+    position: relative;
+    background:#1E2137;
+    color:#c6cbf1;
+    max-width:40rem;
+    min-width:20rem;
+    filter: drop-shadow(5px 5px 10px rgba(31, 30, 30, 0.75));
+    padding:3rem;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+    left:50%;
+    top:-50%;
+    transform: translate(-50%, 50%);
+    opacity: 1;
+    z-index:20;
+}
+
+.modal--shown {
+    /*hide*/
+    /* left:50%;
+    top:-50%;
+    transform: translate(-50%, 50%); */
+
+    /*show*/
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal__close-btn {
+    position: absolute;
+    background:#262a46;
+    color:#c6cbf1;
+    padding:0rem 0.75rem;
+    border-radius: 0% 0% 0% 5px;
+    font-size:3rem;
+    /* filter: drop-shadow(5px 5px 10px rgba(31, 30, 30, 0.397)); */
+    transition: color 0.10s ease;
+    /* left:115%;
+    top:50%;
+    transform: translate(-115%, -50%); */
+    left:100%;
+    top:0%;
+    transform: translate(-100%, -0%);
+}
+
+.modal__close-btn:hover {
+    cursor: pointer;
+    color:#fff;
+}
+
+.modal__close-btn:active {
+    color:#c6cbf1;
+}
+
+
+.modal__heading {
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.modal__message {
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+    margin-top:2rem;
+    width:20rem;
+    background:none;
+    border:none;
+    border-bottom:1px rgb(217, 222, 224) solid;
+    color:#fff;
+    font-size:18px;
+    letter-spacing: 0.75px;
+}
+
+.modal__post-btn {
+    background-color:var(--blue);
+    padding:1rem 2rem;
+    color:#fff;
+    border-radius: 50px;
+    font-size:1rem;
+
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    margin-top:2rem;
+
+}
+
+.modal__post-btn:hover {
+    cursor: pointer;
+    opacity:0.8;
+}
+
+.modal__post-btn:active {
+    opacity:1;
+}
