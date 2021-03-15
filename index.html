@@ -21,13 +21,13 @@
             <button class="send-msg-btn">Send a message</button>
 
             <div class="modal-container">
-                <div class="modal">
+                <div class="modal" method="post" action="/">
                     <button class="modal__close-btn">&times;</button>
                     <h2 class="modal__heading">Send a message</h2>
                     <label for="message">
                         <input class="modal__message" type="text" id="message" name="message" autofocus autocomplete="off" maxlength="250">
                     </label>
-                    <button class="modal__post-btn">Post</button>
+                    <button class="modal__post-btn" type="submit">Post</button>
                 </div>
             </div>
 

@@ -15,19 +15,31 @@ let modalContainer = document.querySelector(".modal-container");
 let modal = document.querySelector(".modal");
 let modalCloseBtn = document.querySelector(".modal__close-btn");
 
-function openModal(event) {
-    modalContainer.classList.add("modal-container-shown");
-    modal.classList.add("modal--shown");
+
+function modalFunctionality() {
+    // open modal
+    function openModal(event) {
+        modalContainer.classList.add("modal-container-shown");
+        modal.classList.add("modal--shown");
+    }
+
+    sendMsgBtn.addEventListener("click", openModal);
+    
+    // close modal
+    function closeModal(event) {
+        modalContainer.classList.remove("modal-container-shown");
+        modal.classList.remove("modal--shown");
+    }
+    
+    modalCloseBtn.addEventListener("click", closeModal);
+    /*Close the  modal when
+    clicking outside the modal*/
+    window.addEventListener("click", event => {
+        if(event.target === modalContainer) {
+            closeModal();
+        }
+    })
 }
 
-sendMsgBtn.addEventListener("click", openModal);
 
-
-function closeModal(event) {
-    modalContainer.classList.remove("modal-container-shown");
-    modal.classList.remove("modal--shown");
-}
-
-modalCloseBtn.addEventListener("click", closeModal);
-
-
+modalFunctionality();

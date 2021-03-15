@@ -87,6 +87,10 @@ input.removeEventListener("focus", inputFunctionFocus)
     opacity:0.8;
 }
 
+.send-msg-btn:active {
+    opacity:1;
+}
+
 
 
 .modal-container {
@@ -95,7 +99,6 @@ input.removeEventListener("focus", inputFunctionFocus)
     width:100vw;
     height:100vh;
     transition: all ease 0.3s;
-
     opacity:0;
     z-index:-10;
 }
@@ -103,8 +106,6 @@ input.removeEventListener("focus", inputFunctionFocus)
 .modal-container-shown {
     opacity:1;
     z-index:10;
-
-
 }
 
 .modal {
@@ -125,12 +126,6 @@ input.removeEventListener("focus", inputFunctionFocus)
 }
 
 .modal--shown {
-    /*hide*/
-    /* left:50%;
-    top:-50%;
-    transform: translate(-50%, 50%); */
-
-    /*show*/
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
@@ -141,13 +136,9 @@ input.removeEventListener("focus", inputFunctionFocus)
     background:#262a46;
     color:#c6cbf1;
     padding:0rem 0.75rem;
-    border-radius: 0% 0% 0% 5px;
+    border-radius:0 inherit;
     font-size:3rem;
-    /* filter: drop-shadow(5px 5px 10px rgba(31, 30, 30, 0.397)); */
     transition: color 0.10s ease;
-    /* left:115%;
-    top:50%;
-    transform: translate(-115%, -50%); */
     left:100%;
     top:0%;
     transform: translate(-100%, -0%);
@@ -181,6 +172,9 @@ input.removeEventListener("focus", inputFunctionFocus)
     color:#fff;
     font-size:18px;
     letter-spacing: 0.75px;
+    outline:0;
+    padding-bottom:0.25rem;
+    caret-color: rgb(217, 222, 224);
 }
 
 .modal__post-btn {
@@ -196,7 +190,6 @@ input.removeEventListener("focus", inputFunctionFocus)
     letter-spacing: 0.75px;
     text-transform: uppercase;
     margin-top:2rem;
-
 }
 
 .modal__post-btn:hover {
